@@ -1,107 +1,215 @@
 '.source.js.jsx':
-  'React ES6 Component':
+  'React Component Class':
     'prefix': 'rc'
     'body': """
-        import React from 'react';
+        import React, { PropTypes, Component } from 'react';
 
-        export default class ${1:MyComponent} extends React.Component {
+        export default class ${1:MyComponent} extends Component {
 
             static propTypes = {
+                ${2}
             };
 
             constructor(props) {
                 super(props);
+                this.state = {};
             }
 
             render() {
                 return (
-                    ${2:<div></div>}
+                    ${3:<div></div>}
                 );
             }
 
         }
     """
-  'React ES6 Functional Component':
+  'React Functional Component':
     'prefix': 'rfn'
     'body': """
-        import React from 'react';
+        import React, { PropTypes } from 'react';
+
         export default function ${1}(props) {
             return (
                 ${2:<div>MyComponent</div>}
             );
         }
+
         ${1}.propTypes = {
         };
     """
 
+  'React PropType componentWillMount':
+    'prefix': 'cwm',
+    'body': """
+      componentWillMount() {
+          ${1}
+      }
+    """
+
+  'React PropType componentDidMount':
+    'prefix': 'cdm',
+    'body': """
+      componentDidMount() {
+          ${1}
+      }
+    """
+
+  'React PropType shouldComponentUpdate':
+    'prefix': 'scu',
+    'body': """
+      shouldComponentUpdate(nextProps, nextState) {
+          ${1}
+      }
+    """
+
+  'React PropType componentWillReceiveProps':
+    'prefix': 'cwrp',
+    'body': """
+      componentWillReceiveProps(nextProps) {
+          ${1}
+      }
+    """
+
+  'React PropType componentWillUpdate':
+    'prefix': 'cwu',
+    'body': """
+      componentWillUpdate(nextProps, nextState) {
+          ${1}
+      }
+    """
+
+  'React PropType componentDidUpdate':
+    'prefix': 'cdu',
+    'body': """
+      componentDidUpdate(prevProps, prevState) {
+          ${1}
+      }
+    """
+
+  'React PropType componentWillUnmount':
+    'prefix': 'cwun',
+    'body': """
+      componentWillUnmount() {
+          ${1}
+      }
+    """
+
   # PropType string
   'React PropType string':
-    'prefix': 'rpstr',
-    'body': "${1:myProp}: React.PropTypes.string,"
+    'prefix': 'pts',
+    'body': "PropTypes.string,"
   'React PropType string required':
-    'prefix': 'rpstrr',
-    'body': "${1:myProp}: React.PropTypes.string.isRequired,"
+    'prefix': 'ptS',
+    'body': "PropTypes.string.isRequired,"
 
   # PropType number
   'React PropType number':
-    'prefix': 'rpn',
-    'body': "${1:myProp}: React.PropTypes.number,"
+    'prefix': 'ptn',
+    'body': "PropTypes.number,"
   'React PropType number required':
-    'prefix': 'rpnr',
-    'body': "${1:myProp}: React.PropTypes.number.isRequired,"
+    'prefix': 'ptN',
+    'body': "PropTypes.number.isRequired,"
 
   # PropType object
   'React PropType object':
-    'prefix': 'rpo',
-    'body': "${1:myProp}: React.PropTypes.object,"
+    'prefix': 'pto',
+    'body': "PropTypes.object,"
   'React PropType object required':
-    'prefix': 'rpor',
-    'body': "${1:myProp}: React.PropTypes.object.isRequired,"
+    'prefix': 'ptO',
+    'body': "PropTypes.object.isRequired,"
 
   # PropType array
   'React PropType array':
-    'prefix': 'rpa',
-    'body': "${1:myProp}: React.PropTypes.array,"
+    'prefix': 'pta',
+    'body': "PropTypes.array,"
   'React PropType array required':
-    'prefix': 'rpar',
-    'body': "${1:myProp}: React.PropTypes.array.isRequired,"
+    'prefix': 'ptA',
+    'body': "PropTypes.array.isRequired,"
+
+  # PropType any
+  'React PropType any':
+    'prefix': 'ptany',
+    'body': "PropTypes.any,"
+  'React PropType any required':
+    'prefix': 'ptAny',
+    'body': "PropTypes.any.isRequired,"
 
   # PropType bool
   'React PropType bool':
-    'prefix': 'rpb',
-    'body': "${1:myProp}: React.PropTypes.bool,"
+    'prefix': 'ptb',
+    'body': "PropTypes.bool,"
   'React PropType bool required':
-    'prefix': 'rpbr',
-    'body': "${1:myProp}: React.PropTypes.bool.isRequired,"
+    'prefix': 'ptB',
+    'body': "PropTypes.bool.isRequired,"
 
   # PropType element
   'React PropType element':
-    'prefix': 'rpe',
-    'body': "${1:myProp}: React.PropTypes.element,"
+    'prefix': 'pte',
+    'body': "PropTypes.element,"
   'React PropType element required':
-    'prefix': 'rper',
-    'body': "${1:myProp}: React.PropTypes.element.isRequired,"
+    'prefix': 'ptE',
+    'body': "PropTypes.element.isRequired,"
 
   # PropType function
   'React PropType function':
-    'prefix': 'rpf',
-    'body': "${1:myProp}: React.PropTypes.func,"
+    'prefix': 'ptf',
+    'body': "PropTypes.func,"
   'React PropType function required':
-    'prefix': 'rpfr',
-    'body': "${1:myProp}: React.PropTypes.func.isRequired,"
+    'prefix': 'ptF',
+    'body': "PropTypes.func.isRequired,"
 
   # PropType shape
   'React PropType shape':
-    'prefix': 'rps',
+    'prefix': 'ptsh',
     'body': """
-      ${1:myProp}: React.PropTypes.shape({
+      PropTypes.shape({
         ${2}
       }),
     """
   'React PropType shape required':
-    'prefix': 'rpsr',
+    'prefix': 'ptSh',
     'body': """
-      ${1:myProp}: React.PropTypes.shape({
-        ${2}
+      PropTypes.shape({
+          ${1}
       }).isRequired,
     """
+
+  # PropType oneOf
+  'React PropType oneOf':
+    'prefix': 'ptoo',
+    'body': """
+      PropTypes.oneOf([
+        ${1}
+      ]),
+    """
+  'React PropType oneOf required':
+    'prefix': 'ptOo',
+    'body': """
+      PropTypes.oneOf([
+          ${1}
+      ]).isRequired,
+    """
+
+  # PropType oneOfType
+  'React PropType oneOfType':
+    'prefix': 'ptoot',
+    'body': """
+      PropTypes.oneOfType([
+          ${1}
+      ]),
+    """
+  'React PropType oneOfType required':
+    'prefix': 'ptOot',
+    'body': """
+      PropTypes.oneOfType([
+          ${1}
+      ]).isRequired,"
+    """
+
+  # PropType node
+  'React PropType node':
+    'prefix': 'ptnode',
+    'body': "PropTypes.node,"
+  'React PropType node required':
+    'prefix': 'ptNode',
+    'body': "PropTypes.node.isRequired,"

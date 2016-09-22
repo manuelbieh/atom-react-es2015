@@ -1,11 +1,13 @@
 {
   "name": "atom-react-es2015-snippets",
-  "version": "0.0.1",
-  "description": "React ES2015 snippets for atom",
+  "version": "1.0.0",
+  "description": "React ES2015/2016/2017 snippets for atom",
   "keywords": [
     "react",
     "ES6",
     "ES2015",
+    "ES2016",
+    "ES2017",
     "babel",
     "snippets"
   ],
