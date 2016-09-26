@@ -95,121 +95,242 @@
     """
 
   # PropType string
-  'React PropType string':
+  'PropType string':
     'prefix': 'pts',
     'body': "PropTypes.string,"
-  'React PropType string required':
+  'PropType string required':
     'prefix': 'ptS',
     'body': "PropTypes.string.isRequired,"
 
   # PropType number
-  'React PropType number':
+  'PropType number':
     'prefix': 'ptn',
     'body': "PropTypes.number,"
-  'React PropType number required':
+  'PropType number required':
     'prefix': 'ptN',
     'body': "PropTypes.number.isRequired,"
 
   # PropType object
-  'React PropType object':
+  'PropType object':
     'prefix': 'pto',
     'body': "PropTypes.object,"
-  'React PropType object required':
+  'PropType object required':
     'prefix': 'ptO',
     'body': "PropTypes.object.isRequired,"
 
   # PropType array
-  'React PropType array':
+  'PropType array':
     'prefix': 'pta',
     'body': "PropTypes.array,"
-  'React PropType array required':
+  'PropType array required':
     'prefix': 'ptA',
     'body': "PropTypes.array.isRequired,"
 
   # PropType any
-  'React PropType any':
+  'PropType any':
     'prefix': 'ptany',
     'body': "PropTypes.any,"
-  'React PropType any required':
+  'PropType any required':
     'prefix': 'ptAny',
     'body': "PropTypes.any.isRequired,"
 
   # PropType bool
-  'React PropType bool':
+  'PropType bool':
     'prefix': 'ptb',
     'body': "PropTypes.bool,"
-  'React PropType bool required':
+  'PropType bool required':
     'prefix': 'ptB',
     'body': "PropTypes.bool.isRequired,"
 
   # PropType element
-  'React PropType element':
+  'PropType element':
     'prefix': 'pte',
     'body': "PropTypes.element,"
-  'React PropType element required':
+  'PropType element required':
     'prefix': 'ptE',
     'body': "PropTypes.element.isRequired,"
 
   # PropType function
-  'React PropType function':
+  'PropType function':
     'prefix': 'ptf',
     'body': "PropTypes.func,"
-  'React PropType function required':
+  'PropType function required':
     'prefix': 'ptF',
     'body': "PropTypes.func.isRequired,"
 
   # PropType shape
-  'React PropType shape':
+  'PropType shape':
     'prefix': 'ptsh',
     'body': """
       PropTypes.shape({
-        ${2}
+          ${2}
       }),
     """
-  'React PropType shape required':
+  'PropType shape required':
     'prefix': 'ptSh',
     'body': """
       PropTypes.shape({
-          ${1}
+            ${1}
       }).isRequired,
     """
 
   # PropType oneOf
-  'React PropType oneOf':
+  'PropType oneOf':
     'prefix': 'ptoo',
     'body': """
       PropTypes.oneOf([
         ${1}
       ]),
     """
-  'React PropType oneOf required':
+  'PropType oneOf required':
     'prefix': 'ptOo',
     'body': """
       PropTypes.oneOf([
-          ${1}
+            ${1}
+      ]).isRequired,
+    """
+
+  # PropType oneOfType
+  'PropType oneOfType':
+    'prefix': 'ptoot',
+    'body': """
+      PropTypes.oneOfType([
+            ${1}
+      ]),
+    """
+  'PropType oneOfType required':
+    'prefix': 'ptOot',
+    'body': """
+      PropTypes.oneOfType([
+            ${1}
+      ]).isRequired,"
+    """
+
+  # PropType node
+  'PropType node':
+    'prefix': 'ptnode',
+    'body': "PropTypes.node,"
+  'PropType node required':
+    'prefix': 'ptNode',
+    'body': "PropTypes.node.isRequired,"
+
+
+  # PropType string
+  'React PropType string':
+    'prefix': 'rpts',
+    'body': "React.PropTypes.string,"
+  'React PropType string required':
+    'prefix': 'rptS',
+    'body': "React.PropTypes.string.isRequired,"
+
+  # PropType number
+  'React PropType number':
+    'prefix': 'rptn',
+    'body': "React.PropTypes.number,"
+  'React PropType number required':
+    'prefix': 'rptN',
+    'body': "React.PropTypes.number.isRequired,"
+
+  # PropType object
+  'React PropType object':
+    'prefix': 'rpto',
+    'body': "React.PropTypes.object,"
+  'React PropType object required':
+    'prefix': 'rptO',
+    'body': "React.PropTypes.object.isRequired,"
+
+  # PropType array
+  'React PropType array':
+    'prefix': 'rpta',
+    'body': "React.PropTypes.array,"
+  'React PropType array required':
+    'prefix': 'rptA',
+    'body': "React.PropTypes.array.isRequired,"
+
+  # PropType any
+  'React PropType any':
+    'prefix': 'rptany',
+    'body': "React.PropTypes.any,"
+  'React PropType any required':
+    'prefix': 'rptAny',
+    'body': "React.PropTypes.any.isRequired,"
+
+  # PropType bool
+  'React PropType bool':
+    'prefix': 'rptb',
+    'body': "React.PropTypes.bool,"
+  'React PropType bool required':
+    'prefix': 'rptB',
+    'body': "React.PropTypes.bool.isRequired,"
+
+  # PropType element
+  'React PropType element':
+    'prefix': 'rpte',
+    'body': "React.PropTypes.element,"
+  'React PropType element required':
+    'prefix': 'rptE',
+    'body': "React.PropTypes.element.isRequired,"
+
+  # PropType function
+  'React PropType function':
+    'prefix': 'rptf',
+    'body': "React.PropTypes.func,"
+  'React PropType function required':
+    'prefix': 'rptF',
+    'body': "React.PropTypes.func.isRequired,"
+
+  # PropType shape
+  'React PropType shape':
+    'prefix': 'rptsh',
+    'body': """
+      React.PropTypes.shape({
+          ${2}
+      }),
+    """
+  'React PropType shape required':
+    'prefix': 'rptSh',
+    'body': """
+      React.PropTypes.shape({
+            ${1}
+      }).isRequired,
+    """
+
+  # PropType oneOf
+  'React PropType oneOf':
+    'prefix': 'rptoo',
+    'body': """
+      React.PropTypes.oneOf([
+        ${1}
+      ]),
+    """
+  'React PropType oneOf required':
+    'prefix': 'rptOo',
+    'body': """
+      React.PropTypes.oneOf([
+            ${1}
       ]).isRequired,
     """
 
   # PropType oneOfType
   'React PropType oneOfType':
-    'prefix': 'ptoot',
+    'prefix': 'rptoot',
     'body': """
-      PropTypes.oneOfType([
-          ${1}
+      React.PropTypes.oneOfType([
+            ${1}
       ]),
     """
   'React PropType oneOfType required':
-    'prefix': 'ptOot',
+    'prefix': 'rptOot',
     'body': """
-      PropTypes.oneOfType([
-          ${1}
+      React.PropTypes.oneOfType([
+            ${1}
       ]).isRequired,"
     """
 
   # PropType node
   'React PropType node':
-    'prefix': 'ptnode',
-    'body': "PropTypes.node,"
+    'prefix': 'rptnode',
+    'body': "React.PropTypes.node,"
   'React PropType node required':
     'prefix': 'ptNode',
-    'body': "PropTypes.node.isRequired,"
+    'body': "React.PropTypes.node.isRequired,"
