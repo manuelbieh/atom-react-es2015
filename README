@@ -26,6 +26,40 @@ export default class ${1:MyComponent} extends Component {
 }
 ```
 
+## React Component Class with Child Context `rcc`→<kbd>tab</kbd>
+```
+import React, { PropTypes, Component } from 'react';
+
+export default class ${1:MyComponent} extends Component {
+
+    static propTypes = {
+        ${2}
+    };
+
+    static childContextTypes = {
+        ${3}
+    };
+
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+
+    getChildContext() {
+        return {
+            ${4}
+        };
+    }
+
+    render() {
+        return (
+            ${5:<div></div>}
+        );
+    }
+
+}
+```
+
 ## React Functional Component `rfn`→<kbd>tab</kbd>
 ```
 import React, { PropTypes } from 'react';
@@ -37,6 +71,26 @@ export default function ${1}(props) {
 }
 
 ${1}.propTypes = {
+    ${3}
+};
+```
+
+## React Functional Component with Context `rfnc`→<kbd>tab</kbd>
+```
+import React, { PropTypes } from 'react';
+
+export default function ${1}(props, context) {
+    return (
+        ${2:<div>MyComponent</div>}
+    );
+}
+
+${1}.propTypes = {
+    ${3}
+};
+
+${1}.contextTypes = {
+    ${4}
 };
 ```
 
@@ -46,31 +100,35 @@ There is a shortcut for each of React's lifecycle methods. Just use the first le
 
 ## PropTypes
 
-PropType shortcuts begin with `pt` (or `rpt` if you need `React.PropTypes`) and end with a lowercase (if optional) or uppercase (if required) letter (or letters) indicating their type (a = array, o = object, oo = oneOf, etc.). Here is a full list:
+PropType shortcuts begin with `pt` (or `rpt` if you need `React.PropTypes…`) and end with a lowercase (if optional) or uppercase (if required) letter (or letters) indicating their type (a = array, o = object, oo = oneOf, etc.). Here is a full list:
 
 | Shortcut | PropType |
 |--------|--------|
-| `pts` | `PropTypes.string` |
-| `ptS` | `PropTypes.string.isRequired` |
-| `ptn` | `PropTypes.number` |
-| `ptN` | `PropTypes.number.isRequired` |
-| `pto` | `PropTypes.object` |
-| `ptO` | `PropTypes.object.isRequired` |
-| `pta` | `PropTypes.string` |
-| `ptA` | `PropTypes.string.isRequired` |
-| `ptany` | `PropTypes.string` |
-| `ptAny` | `PropTypes.string.isRequired` |
-| `ptb` | `PropTypes.bool` |
-| `ptB` | `PropTypes.bool.isRequired` |
-| `pte` | `PropTypes.element` |
-| `ptE` | `PropTypes.element.isRequired` |
-| `ptf` | `PropTypes.func` |
-| `ptF` | `PropTypes.func.isRequired` |
-| `ptsh` | `PropTypes.shape({${1}})` |
-| `ptSh` | `PropTypes.shape({${1}}).isRequired` |
-| `ptoo` | `PropTypes.oneOf({${1}})` |
-| `ptOo` | `PropTypes.oneOf({${1}}).isRequired` |
-| `ptoot` | `PropTypes.oneOfType({${1}})` |
-| `ptOot` | `PropTypes.oneOfType({${1}}).isRequired` |
-| `ptnode` | `PropTypes.node` |
-| `ptNode` | `PropTypes.node.isRequired` |
+| _`r`_`pts` | `PropTypes.string` |
+| _`r`_`ptS` | `PropTypes.string.isRequired` |
+| _`r`_`ptn` | `PropTypes.number` |
+| _`r`_`ptN` | `PropTypes.number.isRequired` |
+| _`r`_`pto` | `PropTypes.object` |
+| _`r`_`ptO` | `PropTypes.object.isRequired` |
+| _`r`_`pta` | `PropTypes.string` |
+| _`r`_`ptA` | `PropTypes.string.isRequired` |
+| _`r`_`ptany` | `PropTypes.string` |
+| _`r`_`ptAny` | `PropTypes.string.isRequired` |
+| _`r`_`ptb` | `PropTypes.bool` |
+| _`r`_`ptB` | `PropTypes.bool.isRequired` |
+| _`r`_`ptf` | `PropTypes.func` |
+| _`r`_`ptF` | `PropTypes.func.isRequired` |
+| _`r`_`ptsh` | `PropTypes.shape({${1}})` |
+| _`r`_`ptSh` | `PropTypes.shape({${1}}).isRequired` |
+| _`r`_`ptoo` | `PropTypes.oneOf([${1}])` |
+| _`r`_`ptOo` | `PropTypes.oneOf([${1}]).isRequired` |
+| _`r`_`ptoot` | `PropTypes.oneOfType([${1}])` |
+| _`r`_`ptOot` | `PropTypes.oneOfType([${1}]).isRequired` |
+| _`r`_`ptao` | `PropTypes.arrayOf(${1})` |
+| _`r`_`ptAo` | `PropTypes.arrayOf(${1}).isRequired` |
+| _`r`_`ptio` | `PropTypes.instanceOf(${1})` |
+| _`r`_`ptIo` | `PropTypes.instanceOf(${1}).isRequired` |
+| _`r`_`pte` | `PropTypes.element` |
+| _`r`_`ptE` | `PropTypes.element.isRequired` |
+| _`r`_`ptnode` | `PropTypes.node` |
+| _`r`_`ptNode` | `PropTypes.node.isRequired` |

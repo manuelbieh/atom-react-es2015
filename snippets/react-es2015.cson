@@ -1,5 +1,5 @@
 '.source.js.jsx':
-  'React Component Class':
+  'React Snippet: Component Class':
     'prefix': 'rc'
     'body': """
         import React, { PropTypes, Component } from 'react';
@@ -23,7 +23,43 @@
 
         }
     """
-  'React Functional Component':
+
+  'React Snippet: Component Class with Child Context':
+    'prefix': 'rcc'
+    'body': """
+        import React, { PropTypes, Component } from 'react';
+
+        export default class ${1:MyComponent} extends Component {
+
+            static propTypes = {
+                ${2}
+            };
+
+            static childContextTypes = {
+                ${3}
+            };
+    
+            constructor(props) {
+                super(props);
+                this.state = {};
+            }
+
+            getChildContext() {
+                return {
+                    ${4}
+                };
+            }
+
+            render() {
+                return (
+                    ${5:<div></div>}
+                );
+            }
+
+        }
+    """
+    
+  'React Snippet: Functional Component':
     'prefix': 'rfn'
     'body': """
         import React, { PropTypes } from 'react';
@@ -38,135 +74,175 @@
         };
     """
 
-  'React PropType componentWillMount':
+  'React Snippet: Functional Component with Context':
+    'prefix': 'rfnc'
+    'body': """
+        import React, { PropTypes } from 'react';
+
+        export default function ${1}(props, context) {
+            return (
+                ${2:<div>MyComponent</div>}
+            );
+        }
+
+        ${1}.propTypes = {
+        };
+        
+        ${1}.contextTypes = {
+        };
+    """
+
+  'React Snippet: PropType componentWillMount':
     'prefix': 'cwm',
     'body': """
-      componentWillMount() {
-          ${1}
-      }
+        componentWillMount() {
+            ${1}
+        }
     """
 
-  'React PropType componentDidMount':
+  'React Snippet: PropType componentDidMount':
     'prefix': 'cdm',
     'body': """
-      componentDidMount() {
-          ${1}
-      }
+        componentDidMount() {
+            ${1}
+        }
     """
 
-  'React PropType shouldComponentUpdate':
+  'React Snippet: PropType shouldComponentUpdate':
     'prefix': 'scu',
     'body': """
-      shouldComponentUpdate(nextProps, nextState) {
-          ${1}
-      }
+        shouldComponentUpdate(nextProps, nextState) {
+            ${1}
+        }
     """
 
-  'React PropType componentWillReceiveProps':
+  'React Snippet: PropType componentWillReceiveProps':
     'prefix': 'cwrp',
     'body': """
-      componentWillReceiveProps(nextProps) {
-          ${1}
-      }
+        componentWillReceiveProps(nextProps) {
+            ${1}
+        }
     """
 
-  'React PropType componentWillUpdate':
+  'React Snippet: PropType componentWillUpdate':
     'prefix': 'cwu',
     'body': """
-      componentWillUpdate(nextProps, nextState) {
-          ${1}
-      }
+        componentWillUpdate(nextProps, nextState) {
+            ${1}
+        }
     """
 
-  'React PropType componentDidUpdate':
+  'React Snippet: PropType componentDidUpdate':
     'prefix': 'cdu',
     'body': """
-      componentDidUpdate(prevProps, prevState) {
-          ${1}
-      }
+        componentDidUpdate(prevProps, prevState) {
+            ${1}
+        }
     """
 
-  'React PropType componentWillUnmount':
+  'React Snippet: PropType componentWillUnmount':
     'prefix': 'cwun',
     'body': """
-      componentWillUnmount() {
-          ${1}
-      }
+        componentWillUnmount() {
+            ${1}
+        }
+    """
+
+  'React Snippet: PropTypes':
+    'prefix': 'rpt',
+    'body': """
+        static propTypes = {
+            ${1}
+        };
+    """
+    
+  'React Snippet: ContextTypes':
+    'prefix': 'rct',
+    'body': """
+        static contextTypes = {
+            ${1}
+        };
+    """
+
+  'React Snippet: ChildContextTypes':
+    'prefix': 'rcct',
+    'body': """
+        static childContextTypes = {
+            ${1}
+        };
+
+        getChildContext() {
+            return {
+                ${2}
+            };
+        }
     """
 
   # PropType string
-  'PropType string':
+  'React Snippet: PropType string':
     'prefix': 'pts',
     'body': "PropTypes.string,"
-  'PropType string required':
+  'React Snippet: PropType string (required)':
     'prefix': 'ptS',
     'body': "PropTypes.string.isRequired,"
 
   # PropType number
-  'PropType number':
+  'React Snippet: PropType number':
     'prefix': 'ptn',
     'body': "PropTypes.number,"
-  'PropType number required':
+  'React Snippet: PropType number (required)':
     'prefix': 'ptN',
     'body': "PropTypes.number.isRequired,"
 
   # PropType object
-  'PropType object':
+  'React Snippet: PropType object':
     'prefix': 'pto',
     'body': "PropTypes.object,"
-  'PropType object required':
+  'React Snippet: PropType object (required)':
     'prefix': 'ptO',
     'body': "PropTypes.object.isRequired,"
 
   # PropType array
-  'PropType array':
+  'React Snippet: PropType array':
     'prefix': 'pta',
     'body': "PropTypes.array,"
-  'PropType array required':
+  'React Snippet: PropType array (required)':
     'prefix': 'ptA',
     'body': "PropTypes.array.isRequired,"
 
   # PropType any
-  'PropType any':
+  'React Snippet: PropType any':
     'prefix': 'ptany',
     'body': "PropTypes.any,"
-  'PropType any required':
+  'React Snippet: PropType any (required)':
     'prefix': 'ptAny',
     'body': "PropTypes.any.isRequired,"
 
   # PropType bool
-  'PropType bool':
+  'React Snippet: PropType bool':
     'prefix': 'ptb',
     'body': "PropTypes.bool,"
-  'PropType bool required':
+  'React Snippet: PropType bool (required)':
     'prefix': 'ptB',
     'body': "PropTypes.bool.isRequired,"
 
-  # PropType element
-  'PropType element':
-    'prefix': 'pte',
-    'body': "PropTypes.element,"
-  'PropType element required':
-    'prefix': 'ptE',
-    'body': "PropTypes.element.isRequired,"
-
   # PropType function
-  'PropType function':
+  'React Snippet: PropType function':
     'prefix': 'ptf',
     'body': "PropTypes.func,"
-  'PropType function required':
+  'React Snippet: PropType function (required)':
     'prefix': 'ptF',
     'body': "PropTypes.func.isRequired,"
 
   # PropType shape
-  'PropType shape':
+  'React Snippet: PropType shape':
     'prefix': 'ptsh',
     'body': """
       PropTypes.shape({
           ${2}
       }),
     """
-  'PropType shape required':
+  'React Snippet: PropType shape (required)':
     'prefix': 'ptSh',
     'body': """
       PropTypes.shape({
@@ -175,14 +251,14 @@
     """
 
   # PropType oneOf
-  'PropType oneOf':
+  'React Snippet: PropType oneOf':
     'prefix': 'ptoo',
     'body': """
       PropTypes.oneOf([
         ${1}
       ]),
     """
-  'PropType oneOf required':
+  'React Snippet: PropType oneOf (required)':
     'prefix': 'ptOo',
     'body': """
       PropTypes.oneOf([
@@ -191,14 +267,14 @@
     """
 
   # PropType oneOfType
-  'PropType oneOfType':
+  'React Snippet: PropType oneOfType':
     'prefix': 'ptoot',
     'body': """
       PropTypes.oneOfType([
             ${1}
       ]),
     """
-  'PropType oneOfType required':
+  'React Snippet: PropType oneOfType (required)':
     'prefix': 'ptOot',
     'body': """
       PropTypes.oneOfType([
@@ -206,88 +282,113 @@
       ]).isRequired,"
     """
 
+  # PropType arrayOf
+  'React Snippet: PropType arrayOf':
+    'prefix': 'ptao',
+    'body': """
+      PropTypes.arrayOf(${1}),
+    """
+  'React Snippet: PropType arrayOf (required)':
+    'prefix': 'ptAo',
+    'body': """
+      PropTypes.arrayOf(${1}).isRequired,"
+    """
+    
+  # PropType instanceOf
+  'React Snippet: PropType instanceOf':
+    'prefix': 'ptio',
+    'body': """
+      PropTypes.instanceOf(${1}),
+    """
+  'React Snippet: PropType instanceOf (required)':
+    'prefix': 'ptIo',
+    'body': """
+      PropTypes.instanceOf(${1}).isRequired,"
+    """
+
+  # PropType element
+  'React Snippet: PropType element':
+    'prefix': 'pte',
+    'body': "PropTypes.element,"
+  'React Snippet: PropType element (required)':
+    'prefix': 'ptE',
+    'body': "PropTypes.element.isRequired,"
+
   # PropType node
-  'PropType node':
+  'React Snippet: PropType node':
     'prefix': 'ptnode',
     'body': "PropTypes.node,"
-  'PropType node required':
+  'React Snippet: PropType node (required)':
     'prefix': 'ptNode',
     'body': "PropTypes.node.isRequired,"
 
 
+
   # PropType string
-  'React PropType string':
+  'React Snippet: PropType string':
     'prefix': 'rpts',
     'body': "React.PropTypes.string,"
-  'React PropType string required':
+  'React Snippet: PropType string (required)':
     'prefix': 'rptS',
     'body': "React.PropTypes.string.isRequired,"
 
   # PropType number
-  'React PropType number':
+  'React Snippet: PropType number':
     'prefix': 'rptn',
     'body': "React.PropTypes.number,"
-  'React PropType number required':
+  'React Snippet: PropType number (required)':
     'prefix': 'rptN',
     'body': "React.PropTypes.number.isRequired,"
 
   # PropType object
-  'React PropType object':
+  'React Snippet: PropType object':
     'prefix': 'rpto',
     'body': "React.PropTypes.object,"
-  'React PropType object required':
+  'React Snippet: PropType object (required)':
     'prefix': 'rptO',
     'body': "React.PropTypes.object.isRequired,"
 
   # PropType array
-  'React PropType array':
+  'React Snippet: PropType array':
     'prefix': 'rpta',
     'body': "React.PropTypes.array,"
-  'React PropType array required':
+  'React Snippet: PropType array (required)':
     'prefix': 'rptA',
     'body': "React.PropTypes.array.isRequired,"
 
   # PropType any
-  'React PropType any':
+  'React Snippet: PropType any':
     'prefix': 'rptany',
     'body': "React.PropTypes.any,"
-  'React PropType any required':
+  'React Snippet: PropType any (required)':
     'prefix': 'rptAny',
     'body': "React.PropTypes.any.isRequired,"
 
   # PropType bool
-  'React PropType bool':
+  'React Snippet: PropType bool':
     'prefix': 'rptb',
     'body': "React.PropTypes.bool,"
-  'React PropType bool required':
+  'React Snippet: PropType bool (required)':
     'prefix': 'rptB',
     'body': "React.PropTypes.bool.isRequired,"
 
-  # PropType element
-  'React PropType element':
-    'prefix': 'rpte',
-    'body': "React.PropTypes.element,"
-  'React PropType element required':
-    'prefix': 'rptE',
-    'body': "React.PropTypes.element.isRequired,"
-
   # PropType function
-  'React PropType function':
+  'React Snippet: PropType function':
     'prefix': 'rptf',
     'body': "React.PropTypes.func,"
-  'React PropType function required':
+  'React Snippet: PropType function (required)':
     'prefix': 'rptF',
     'body': "React.PropTypes.func.isRequired,"
 
   # PropType shape
-  'React PropType shape':
+  'React Snippet: PropType shape':
     'prefix': 'rptsh',
     'body': """
       React.PropTypes.shape({
           ${2}
       }),
     """
-  'React PropType shape required':
+  'React Snippet: PropType shape (required)':
     'prefix': 'rptSh',
     'body': """
       React.PropTypes.shape({
@@ -296,14 +397,14 @@
     """
 
   # PropType oneOf
-  'React PropType oneOf':
+  'React Snippet: PropType oneOf':
     'prefix': 'rptoo',
     'body': """
       React.PropTypes.oneOf([
         ${1}
       ]),
     """
-  'React PropType oneOf required':
+  'React Snippet: PropType oneOf (required)':
     'prefix': 'rptOo',
     'body': """
       React.PropTypes.oneOf([
@@ -312,14 +413,14 @@
     """
 
   # PropType oneOfType
-  'React PropType oneOfType':
+  'React Snippet: PropType oneOfType':
     'prefix': 'rptoot',
     'body': """
       React.PropTypes.oneOfType([
             ${1}
       ]),
     """
-  'React PropType oneOfType required':
+  'React Snippet: PropType oneOfType (required)':
     'prefix': 'rptOot',
     'body': """
       React.PropTypes.oneOfType([
@@ -327,10 +428,54 @@
       ]).isRequired,"
     """
 
+  # PropType arrayOf
+  'React Snippet: PropType arrayOf':
+    'prefix': 'rptao',
+    'body': """
+      React.PropTypes.arrayOf(${1}),
+    """
+  'React Snippet: PropType arrayOf (required)':
+    'prefix': 'rptAo',
+    'body': """
+      React.PropTypes.arrayOf(${1}).isRequired,"
+    """
+
+  # PropType arrayOf
+  'React Snippet: PropType arrayOf':
+    'prefix': 'rptao',
+    'body': """
+      React.PropTypes.arrayOf(${1}),
+    """
+  'React Snippet: PropType arrayOf (required)':
+    'prefix': 'rptAo',
+    'body': """
+      React.PropTypes.arrayOf(${1}).isRequired,"
+    """
+
+  # PropType instanceOf
+  'React Snippet: PropType instanceOf':
+    'prefix': 'rptio',
+    'body': """
+      React.PropTypes.instanceOf(${1}),
+    """
+  'React Snippet: PropType instanceOf (required)':
+    'prefix': 'rptIo',
+    'body': """
+      React.PropTypes.instanceOf(${1}).isRequired,"
+    """
+
+  # PropType element
+  'React Snippet: PropType element':
+    'prefix': 'rpte',
+    'body': "React.PropTypes.element,"
+  'React Snippet: PropType element (required)':
+    'prefix': 'rptE',
+    'body': "React.PropTypes.element.isRequired,"
+
   # PropType node
-  'React PropType node':
+  'React Snippet: PropType node':
     'prefix': 'rptnode',
     'body': "React.PropTypes.node,"
-  'React PropType node required':
+  'React Snippet: PropType node (required)':
     'prefix': 'ptNode',
     'body': "React.PropTypes.node.isRequired,"
