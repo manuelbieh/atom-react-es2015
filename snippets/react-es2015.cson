@@ -2,9 +2,9 @@
   'Component Class [React Snippet]':
     'prefix': 'rc'
     'body': """
-        import React, { PropTypes, Component } from 'react';
+        import React from 'react';
 
-        export default class ${1:MyComponent} extends Component {
+        export default class ${1:MyComponent} extends React.Component {
 
             static propTypes = {
                 ${2}
@@ -27,9 +27,9 @@
   'Component Class with Child Context [React Snippet]':
     'prefix': 'rcc'
     'body': """
-        import React, { PropTypes, Component } from 'react';
+        import React from 'react';
 
-        export default class ${1:MyComponent} extends Component {
+        export default class ${1:MyComponent} extends React.Component {
 
             static propTypes = {
                 ${2}
@@ -62,7 +62,7 @@
   'Functional Component [React Snippet]':
     'prefix': 'rfn'
     'body': """
-        import React, { PropTypes } from 'react';
+        import React from 'react';
 
         export default function ${1}(props) {
             return (
@@ -77,7 +77,7 @@
   'Functional Component with Context [React Snippet]':
     'prefix': 'rfnc'
     'body': """
-        import React, { PropTypes } from 'react';
+        import React from 'react';
 
         export default function ${1}(props, context) {
             return (
@@ -238,72 +238,72 @@
   'PropType shape [React Snippet]':
     'prefix': 'ptsh',
     'body': """
-      PropTypes.shape({
-          ${2}
-      }),
+    PropTypes.shape({
+        ${2}
+    }),
     """
   'PropType shape (required) [React Snippet]':
     'prefix': 'ptSh',
     'body': """
-      PropTypes.shape({
-            ${1}
-      }).isRequired,
+    PropTypes.shape({
+        ${1}
+    }).isRequired,
     """
 
   # PropType oneOf
   'PropType oneOf [React Snippet]':
     'prefix': 'ptoo',
     'body': """
-      PropTypes.oneOf([
+    PropTypes.oneOf([
         ${1}
-      ]),
+    ]),
     """
   'PropType oneOf (required) [React Snippet]':
     'prefix': 'ptOo',
     'body': """
-      PropTypes.oneOf([
-            ${1}
-      ]).isRequired,
+    PropTypes.oneOf([
+        ${1}
+    ]).isRequired,
     """
 
   # PropType oneOfType
   'PropType oneOfType [React Snippet]':
     'prefix': 'ptoot',
     'body': """
-      PropTypes.oneOfType([
-            ${1}
-      ]),
+    PropTypes.oneOfType([
+        ${1}
+    ]),
     """
   'PropType oneOfType (required) [React Snippet]':
     'prefix': 'ptOot',
     'body': """
-      PropTypes.oneOfType([
-            ${1}
-      ]).isRequired,"
+    PropTypes.oneOfType([
+        ${1}
+    ]).isRequired,"
     """
 
   # PropType arrayOf
   'PropType arrayOf [React Snippet]':
     'prefix': 'ptao',
     'body': """
-      PropTypes.arrayOf(${1}),
+    PropTypes.arrayOf(${1}),
     """
   'PropType arrayOf (required) [React Snippet]':
     'prefix': 'ptAo',
     'body': """
-      PropTypes.arrayOf(${1}).isRequired,"
+    PropTypes.arrayOf(${1}).isRequired,"
     """
     
   # PropType instanceOf
   'PropType instanceOf [React Snippet]':
     'prefix': 'ptio',
     'body': """
-      PropTypes.instanceOf(${1}),
+    PropTypes.instanceOf(${1}),
     """
   'PropType instanceOf (required) [React Snippet]':
     'prefix': 'ptIo',
     'body': """
-      PropTypes.instanceOf(${1}).isRequired,"
+    PropTypes.instanceOf(${1}).isRequired,"
     """
 
   # PropType element
@@ -384,48 +384,48 @@
   'PropType shape [React Snippet]':
     'prefix': 'rptsh',
     'body': """
-      React.PropTypes.shape({
-          ${2}
-      }),
+    React.PropTypes.shape({
+        ${2}
+    }),
     """
   'PropType shape (required) [React Snippet]':
     'prefix': 'rptSh',
     'body': """
-      React.PropTypes.shape({
-            ${1}
-      }).isRequired,
+    React.PropTypes.shape({
+        ${1}
+    }).isRequired,
     """
 
   # PropType oneOf
   'PropType oneOf [React Snippet]':
     'prefix': 'rptoo',
     'body': """
-      React.PropTypes.oneOf([
+    React.PropTypes.oneOf([
         ${1}
-      ]),
+    ]),
     """
   'PropType oneOf (required) [React Snippet]':
     'prefix': 'rptOo',
     'body': """
-      React.PropTypes.oneOf([
-            ${1}
-      ]).isRequired,
+    React.PropTypes.oneOf([
+        ${1}
+    ]).isRequired,
     """
 
   # PropType oneOfType
   'PropType oneOfType [React Snippet]':
     'prefix': 'rptoot',
     'body': """
-      React.PropTypes.oneOfType([
-            ${1}
-      ]),
+    React.PropTypes.oneOfType([
+        ${1}
+    ]),
     """
   'PropType oneOfType (required) [React Snippet]':
     'prefix': 'rptOot',
     'body': """
-      React.PropTypes.oneOfType([
-            ${1}
-      ]).isRequired,"
+    React.PropTypes.oneOfType([
+        ${1}
+    ]).isRequired,"
     """
 
   # PropType arrayOf
