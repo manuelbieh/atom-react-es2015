@@ -1,8 +1,9 @@
 # Atom React ES2015 Snippets
 
-Some very opinionated (= how <a href="https://www.github.com/manuelbieh">I</a> like it) React ES2015/2016/2017/Stage-0 snippets for Atom
+Some very opinionated (how [I](https://www.manuelbieh.de) like it) React ES2015/2016/2017/Stage-0 snippets for Atom
 
 ## React Component Class `rc`→<kbd>tab</kbd>
+
 ```
 import React, { PropTypes, Component } from 'react';
 
@@ -27,6 +28,7 @@ export default class ${1:MyComponent} extends Component {
 ```
 
 ## React Component Class with Child Context `rcc`→<kbd>tab</kbd>
+
 ```
 import React, { PropTypes, Component } from 'react';
 
@@ -61,6 +63,7 @@ export default class ${1:MyComponent} extends Component {
 ```
 
 ## React Functional Component `rfn`→<kbd>tab</kbd>
+
 ```
 import React, { PropTypes } from 'react';
 
@@ -76,6 +79,7 @@ ${1}.propTypes = {
 ```
 
 ## React Functional Component with Context `rfnc`→<kbd>tab</kbd>
+
 ```
 import React, { PropTypes } from 'react';
 
