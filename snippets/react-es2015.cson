@@ -3,6 +3,7 @@
     'prefix': 'rc'
     'body': """
         import React from 'react';
+        import PropTypes from 'prop-types';
 
         export default class ${1:MyComponent} extends React.Component {
 
@@ -28,6 +29,7 @@
     'prefix': 'rcc'
     'body': """
         import React from 'react';
+        import PropTypes from 'prop-types';
 
         export default class ${1:MyComponent} extends React.Component {
 
@@ -63,6 +65,7 @@
     'prefix': 'rfn'
     'body': """
         import React from 'react';
+        import PropTypes from 'prop-types';
 
         export default function ${1}(props) {
             return (
@@ -78,6 +81,7 @@
     'prefix': 'rfnc'
     'body': """
         import React from 'react';
+        import PropTypes from 'prop-types';
 
         export default function ${1}(props, context) {
             return (
@@ -92,7 +96,7 @@
         };
     """
 
-  'PropType componentWillMount [React Snippet]':
+  'Lifecycle Method componentWillMount [React Snippet]':
     'prefix': 'cwm',
     'body': """
         componentWillMount() {
@@ -100,7 +104,7 @@
         }
     """
 
-  'PropType componentDidMount [React Snippet]':
+  'Lifecycle Method componentDidMount [React Snippet]':
     'prefix': 'cdm',
     'body': """
         componentDidMount() {
@@ -108,7 +112,7 @@
         }
     """
 
-  'PropType shouldComponentUpdate [React Snippet]':
+  'Lifecycle Method shouldComponentUpdate [React Snippet]':
     'prefix': 'scu',
     'body': """
         shouldComponentUpdate(nextProps, nextState) {
@@ -116,7 +120,7 @@
         }
     """
 
-  'PropType componentWillReceiveProps [React Snippet]':
+  'Lifecycle Method componentWillReceiveProps [React Snippet]':
     'prefix': 'cwrp',
     'body': """
         componentWillReceiveProps(nextProps) {
@@ -124,7 +128,7 @@
         }
     """
 
-  'PropType componentWillUpdate [React Snippet]':
+  'Lifecycle Method componentWillUpdate [React Snippet]':
     'prefix': 'cwu',
     'body': """
         componentWillUpdate(nextProps, nextState) {
@@ -132,7 +136,7 @@
         }
     """
 
-  'PropType componentDidUpdate [React Snippet]':
+  'Lifecycle Method componentDidUpdate [React Snippet]':
     'prefix': 'cdu',
     'body': """
         componentDidUpdate(prevProps, prevState) {
@@ -140,7 +144,7 @@
         }
     """
 
-  'PropType componentWillUnmount [React Snippet]':
+  'Lifecycle Method componentWillUnmount [React Snippet]':
     'prefix': 'cwun',
     'body': """
         componentWillUnmount() {
@@ -279,7 +283,7 @@
     'body': """
     PropTypes.oneOfType([
         ${1}
-    ]).isRequired,"
+    ]).isRequired,
     """
 
   # PropType arrayOf
@@ -291,7 +295,7 @@
   'PropType arrayOf (required) [React Snippet]':
     'prefix': 'ptAo',
     'body': """
-    PropTypes.arrayOf(${1}).isRequired,"
+    PropTypes.arrayOf(${1}).isRequired,
     """
     
   # PropType instanceOf
@@ -303,7 +307,7 @@
   'PropType instanceOf (required) [React Snippet]':
     'prefix': 'ptIo',
     'body': """
-    PropTypes.instanceOf(${1}).isRequired,"
+    PropTypes.instanceOf(${1}).isRequired,
     """
 
   # PropType element
@@ -425,7 +429,7 @@
     'body': """
     React.PropTypes.oneOfType([
         ${1}
-    ]).isRequired,"
+    ]).isRequired,
     """
 
   # PropType arrayOf
@@ -437,19 +441,19 @@
   'PropType arrayOf (required) [React Snippet]':
     'prefix': 'rptAo',
     'body': """
-      React.PropTypes.arrayOf(${1}).isRequired,"
+    React.PropTypes.arrayOf(${1}).isRequired,
     """
 
   # PropType arrayOf
   'PropType arrayOf [React Snippet]':
     'prefix': 'rptao',
     'body': """
-      React.PropTypes.arrayOf(${1}),
+    React.PropTypes.arrayOf(${1}),
     """
   'PropType arrayOf (required) [React Snippet]':
     'prefix': 'rptAo',
     'body': """
-      React.PropTypes.arrayOf(${1}).isRequired,"
+    React.PropTypes.arrayOf(${1}).isRequired,
     """
 
   # PropType instanceOf
@@ -461,7 +465,7 @@
   'PropType instanceOf (required) [React Snippet]':
     'prefix': 'rptIo',
     'body': """
-      React.PropTypes.instanceOf(${1}).isRequired,"
+    React.PropTypes.instanceOf(${1}).isRequired,
     """
 
   # PropType element
