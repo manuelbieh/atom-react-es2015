@@ -5,7 +5,8 @@ Some very opinionated (how [I](https://www.manuelbieh.de) like it) React ES2015/
 ## React Component Class `rc`→<kbd>tab</kbd>
 
 ```
-import React, { PropTypes, Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class ${1:MyComponent} extends Component {
 
@@ -30,7 +31,8 @@ export default class ${1:MyComponent} extends Component {
 ## React Component Class with Child Context `rcc`→<kbd>tab</kbd>
 
 ```
-import React, { PropTypes, Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class ${1:MyComponent} extends Component {
 
@@ -65,7 +67,8 @@ export default class ${1:MyComponent} extends Component {
 ## React Functional Component `rfn`→<kbd>tab</kbd>
 
 ```
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function ${1}(props) {
     return (
@@ -81,7 +84,8 @@ ${1}.propTypes = {
 ## React Functional Component with Context `rfnc`→<kbd>tab</kbd>
 
 ```
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function ${1}(props, context) {
     return (
@@ -108,31 +112,31 @@ PropType shortcuts begin with `pt` (or `rpt` if you need `React.PropTypes…`) a
 
 | Shortcut | PropType |
 |--------|--------|
-| _`r`_`pts` | `PropTypes.string` |
-| _`r`_`ptS` | `PropTypes.string.isRequired` |
-| _`r`_`ptn` | `PropTypes.number` |
-| _`r`_`ptN` | `PropTypes.number.isRequired` |
-| _`r`_`pto` | `PropTypes.object` |
-| _`r`_`ptO` | `PropTypes.object.isRequired` |
-| _`r`_`pta` | `PropTypes.string` |
-| _`r`_`ptA` | `PropTypes.string.isRequired` |
-| _`r`_`ptany` | `PropTypes.string` |
-| _`r`_`ptAny` | `PropTypes.string.isRequired` |
-| _`r`_`ptb` | `PropTypes.bool` |
-| _`r`_`ptB` | `PropTypes.bool.isRequired` |
-| _`r`_`ptf` | `PropTypes.func` |
-| _`r`_`ptF` | `PropTypes.func.isRequired` |
-| _`r`_`ptsh` | `PropTypes.shape({${1}})` |
-| _`r`_`ptSh` | `PropTypes.shape({${1}}).isRequired` |
-| _`r`_`ptoo` | `PropTypes.oneOf([${1}])` |
-| _`r`_`ptOo` | `PropTypes.oneOf([${1}]).isRequired` |
-| _`r`_`ptoot` | `PropTypes.oneOfType([${1}])` |
-| _`r`_`ptOot` | `PropTypes.oneOfType([${1}]).isRequired` |
-| _`r`_`ptao` | `PropTypes.arrayOf(${1})` |
-| _`r`_`ptAo` | `PropTypes.arrayOf(${1}).isRequired` |
-| _`r`_`ptio` | `PropTypes.instanceOf(${1})` |
-| _`r`_`ptIo` | `PropTypes.instanceOf(${1}).isRequired` |
-| _`r`_`pte` | `PropTypes.element` |
-| _`r`_`ptE` | `PropTypes.element.isRequired` |
-| _`r`_`ptnode` | `PropTypes.node` |
-| _`r`_`ptNode` | `PropTypes.node.isRequired` |
+| `(r)pts` | `(React.)PropTypes.string` |
+| `(r)ptS` | `(React.)PropTypes.string.isRequired` |
+| `(r)ptn` | `(React.)PropTypes.number` |
+| `(r)ptN` | `(React.)PropTypes.number.isRequired` |
+| `(r)pto` | `(React.)PropTypes.object` |
+| `(r)ptO` | `(React.)PropTypes.object.isRequired` |
+| `(r)pta` | `(React.)PropTypes.string` |
+| `(r)ptA` | `(React.)PropTypes.string.isRequired` |
+| `(r)ptany` | `(React.)PropTypes.string` |
+| `(r)ptAny` | `(React.)PropTypes.string.isRequired` |
+| `(r)ptb` | `(React.)PropTypes.bool` |
+| `(r)ptB` | `(React.)PropTypes.bool.isRequired` |
+| `(r)ptf` | `(React.)PropTypes.func` |
+| `(r)ptF` | `(React.)PropTypes.func.isRequired` |
+| `(r)ptsh` | `(React.)PropTypes.shape({${1}})` |
+| `(r)ptSh` | `(React.)PropTypes.shape({${1}}).isRequired` |
+| `(r)ptoo` | `(React.)PropTypes.oneOf([${1}])` |
+| `(r)ptOo` | `(React.)PropTypes.oneOf([${1}]).isRequired` |
+| `(r)ptoot` | `(React.)PropTypes.oneOfType([${1}])` |
+| `(r)ptOot` | `(React.)PropTypes.oneOfType([${1}]).isRequired` |
+| `(r)ptao` | `(React.)PropTypes.arrayOf(${1})` |
+| `(r)ptAo` | `(React.)PropTypes.arrayOf(${1}).isRequired` |
+| `(r)ptio` | `(React.)PropTypes.instanceOf(${1})` |
+| `(r)ptIo` | `(React.)PropTypes.instanceOf(${1}).isRequired` |
+| `(r)pte` | `(React.)PropTypes.element` |
+| `(r)ptE` | `(React.)PropTypes.element.isRequired` |
+| `(r)ptnode` | `(React.)PropTypes.node` |
+| `(r)ptNode` | `(React.)PropTypes.node.isRequired` |
