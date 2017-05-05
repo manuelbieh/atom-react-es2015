@@ -1,20 +1,19 @@
 {
-  "name": "atom-react-es2015-snippets",
+  "name": "atom-react-es2015+-snippets",
   "version": "1.2.1",
   "description": "React ES2015/2016/2017 snippets for atom",
   "keywords": [
-    "react",
+    "React",
     "ES6",
     "ES2015",
     "ES2016",
     "ES2017",
-    "babel",
-    "snippets"
+    "Babel",
+    "Snippets"
   ],
   "repository": "https://github.com/manuelbieh/atom-react-es2015-snippets",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
-  },
-  "dependencies": {}
+  }
 }

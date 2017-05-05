@@ -1,4 +1,4 @@
-# Atom React ES2015 Snippets
+# Atom React ES2015+ Snippets
 
 Some very opinionated (how [I](https://www.manuelbieh.de) like it) React ES2015/2016/2017/Stage-0 snippets for Atom
 
