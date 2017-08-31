@@ -4,6 +4,8 @@ Some very opinionated (=[how I like it](https://www.manuelbieh.de)) React ES2015
 
 ## React Component Class `rc`→<kbd>tab</kbd>
 
+Hint: Use `rpc` instead to create a [PureComponent](https://facebook.github.io/react/docs/react-api.html#react.purecomponent).
+
 ```
 import React from 'react';
 import PropTypes from 'prop-types';
