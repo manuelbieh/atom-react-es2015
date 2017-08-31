@@ -11,10 +11,7 @@
                 ${2}
             };
 
-            constructor(props) {
-                super(props);
-                this.state = {};
-            }
+            state = {};
 
             render() {
                 return (
@@ -23,6 +20,35 @@
             }
 
         }
+    """
+
+  'Redux Connected Component Class [React Snippet]':
+    'prefix': 'rcrc'
+    'body': """
+        import React from 'react';
+        import PropTypes from 'prop-types';
+        import { connect } from 'react-redux';
+
+        class ${1:MyComponent} extends React.Component {
+
+            static propTypes = {
+                ${2}
+            };
+
+            state = {};
+
+            render() {
+                return (
+                    ${3:<div></div>}
+                );
+            }
+
+        }
+
+        export default connect(
+            (state, ownProps) => ({ ...ownProps, }),
+            (dispatch) => ({ dispatch }),
+        )(${1});
     """
 
   'Component Class with Child Context [React Snippet]':
@@ -41,10 +67,7 @@
                 ${3}
             };
     
-            constructor(props) {
-                super(props);
-                this.state = {};
-            }
+            state = {};
 
             getChildContext() {
                 return {

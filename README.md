@@ -1,6 +1,6 @@
 # Atom React ES2015+ Snippets
 
-Some very opinionated (how [I](https://www.manuelbieh.de) like it) React ES2015/2016/2017/Stage-0 snippets for Atom
+Some very opinionated (=[how I like it](https://www.manuelbieh.de)) React ES2015+ snippets for Atom. I try to follow community best practices and update the snippets regularly to always keep the snippets up-to-date with the recent development of React.
 
 ## React Component Class `rc`→<kbd>tab</kbd>
 
@@ -26,6 +26,35 @@ export default class ${1:MyComponent} extends Component {
     }
 
 }
+```
+
+## Redux connected React Component Class `rcrc`→<kbd>tab</kbd>
+
+```
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+class ${1:MyComponent} extends React.Component {
+
+    static propTypes = {
+        ${2}
+    };
+
+    state = {};
+
+    render() {
+        return (
+            ${3:<div></div>}
+        );
+    }
+
+}
+
+export default connect(
+    (state, ownProps) => ({ ...ownProps, }),
+    (dispatch) => ({ dispatch }),
+)(${1});
 ```
 
 ## React Component Class with Child Context `rcc`→<kbd>tab</kbd>
