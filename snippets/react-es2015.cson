@@ -64,7 +64,7 @@
             );
         }
         
-        export default {$1};
+        export default ${1};
     """
 
   'Lifecycle Method componentWillMount [React Snippet]':
