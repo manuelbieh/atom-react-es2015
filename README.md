@@ -23,7 +23,7 @@ export default class ${1:MyComponent} extends React.Component {
 ## Redux connected React Component `rcrc`→<kbd>tab</kbd>
 
 ```
-import * React from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 
 class ${1:MyComponent} extends React.Component {
