@@ -1,145 +1,70 @@
 '.source.js.jsx':
-  'Component Class [React Snippet]':
+  'React Component [React Snippet]':
     'prefix': 'rc'
     'body': """
-        import React from 'react';
-        import PropTypes from 'prop-types';
+        import * as React from 'react';
 
         export default class ${1:MyComponent} extends React.Component {
-
-            static propTypes = {
-                ${2}
-            };
-
             state = {};
 
             render() {
                 return (
-                    ${3:<div></div>}
+                    ${2:<div />}
                 );
             }
-
         }
     """
 
-  'Pure Component Class [React Snippet]':
+  'React Pure Component [React Snippet]':
     'prefix': 'rpc'
     'body': """
-        import React from 'react';
-        import PropTypes from 'prop-types';
+        import * as React from 'react';
 
         export default class ${1:MyComponent} extends React.PureComponent {
-
-            static propTypes = {
-                ${2}
-            };
-
             state = {};
 
             render() {
                 return (
-                    ${3:<div></div>}
+                    ${2:<div />}
                 );
             }
-
         }
     """
 
-  'Redux Connected Component Class [React Snippet]':
+  'Redux Connected React Class Component [React Snippet]':
     'prefix': 'rcrc'
     'body': """
-        import React from 'react';
-        import PropTypes from 'prop-types';
+        import * React from 'react';
         import { connect } from 'react-redux';
 
         class ${1:MyComponent} extends React.Component {
-
-            static propTypes = {
-                ${2}
-            };
-
             state = {};
 
             render() {
                 return (
-                    ${3:<div></div>}
+                    ${2:<div />}
                 );
             }
-
         }
 
-        export default connect(
-            (state, ownProps) => ({ ...ownProps, }),
-            (dispatch) => ({ dispatch }),
-        )(${1});
+        const mapStateToProps = (state) => ({});
+        const mapDispatchToProps = {};
+
+        export default connect(mapStateToProps, mapDispatchToProps)(${1});
     """
 
-  'Component Class with Child Context [React Snippet]':
-    'prefix': 'rcc'
+  'Stateless Functional Component [React Snippet]':
+    'prefix': 'sfc'
     'body': """
-        import React from 'react';
-        import PropTypes from 'prop-types';
+        import * as React from 'react';
 
-        export default class ${1:MyComponent} extends React.Component {
-
-            static propTypes = {
-                ${2}
-            };
-
-            static childContextTypes = {
-                ${3}
-            };
-    
-            state = {};
-
-            getChildContext() {
-                return {
-                    ${4}
-                };
-            }
-
-            render() {
-                return (
-                    ${5:<div></div>}
-                );
-            }
-
-        }
-    """
-    
-  'Functional Component [React Snippet]':
-    'prefix': 'rfn'
-    'body': """
-        import React from 'react';
-        import PropTypes from 'prop-types';
-
-        export default function ${1}(props) {
+        const ${1} = (props) => {
             return (
-                ${2:<div>MyComponent</div>}
+                ${2:<div />}
             );
         }
-
-        ${1}.propTypes = {
-        };
-    """
-
-  'Functional Component with Context [React Snippet]':
-    'prefix': 'rfnc'
-    'body': """
-        import React from 'react';
-        import PropTypes from 'prop-types';
-
-        export default function ${1}(props, context) {
-            return (
-                ${2:<div>MyComponent</div>}
-            );
-        }
-
-        ${1}.propTypes = {
-        };
         
-        ${1}.contextTypes = {
-        };
+        export default {$1};
     """
 
   'Lifecycle Method componentWillMount [React Snippet]':
@@ -166,22 +91,6 @@
         }
     """
 
-  'Lifecycle Method componentWillReceiveProps [React Snippet]':
-    'prefix': 'cwrp',
-    'body': """
-        componentWillReceiveProps(nextProps) {
-            ${1}
-        }
-    """
-
-  'Lifecycle Method componentWillUpdate [React Snippet]':
-    'prefix': 'cwu',
-    'body': """
-        componentWillUpdate(nextProps, nextState) {
-            ${1}
-        }
-    """
-
   'Lifecycle Method componentDidUpdate [React Snippet]':
     'prefix': 'cdu',
     'body': """
@@ -191,341 +100,32 @@
     """
 
   'Lifecycle Method componentWillUnmount [React Snippet]':
-    'prefix': 'cwun',
+    'prefix': 'cwu',
     'body': """
         componentWillUnmount() {
             ${1}
         }
     """
 
-  'PropTypes [React Snippet]':
-    'prefix': 'rpt',
+  'Lifecycle Method getDerivedStateFromProps [React Snippet]':
+    'prefix': 'gdsfp',
     'body': """
-        static propTypes = {
-            ${1}
-        };
-    """
-    
-  'ContextTypes [React Snippet]':
-    'prefix': 'rct',
-    'body': """
-        static contextTypes = {
-            ${1}
-        };
-    """
-
-  'ChildContextTypes [React Snippet]':
-    'prefix': 'rcct',
-    'body': """
-        static childContextTypes = {
-            ${1}
-        };
-
-        getChildContext() {
-            return {
-                ${2}
-            };
+        static getDerivedStateFromProps() {
+            return ${1}
         }
     """
 
-  # PropType string
-  'PropType string [React Snippet]':
-    'prefix': 'pts',
-    'body': "PropTypes.string,"
-  'PropType string (required) [React Snippet]':
-    'prefix': 'ptS',
-    'body': "PropTypes.string.isRequired,"
-
-  # PropType number
-  'PropType number [React Snippet]':
-    'prefix': 'ptn',
-    'body': "PropTypes.number,"
-  'PropType number (required) [React Snippet]':
-    'prefix': 'ptN',
-    'body': "PropTypes.number.isRequired,"
-
-  # PropType object
-  'PropType object [React Snippet]':
-    'prefix': 'pto',
-    'body': "PropTypes.object,"
-  'PropType object (required) [React Snippet]':
-    'prefix': 'ptO',
-    'body': "PropTypes.object.isRequired,"
-
-  # PropType array
-  'PropType array [React Snippet]':
-    'prefix': 'pta',
-    'body': "PropTypes.array,"
-  'PropType array (required) [React Snippet]':
-    'prefix': 'ptA',
-    'body': "PropTypes.array.isRequired,"
-
-  # PropType any
-  'PropType any [React Snippet]':
-    'prefix': 'ptany',
-    'body': "PropTypes.any,"
-  'PropType any (required) [React Snippet]':
-    'prefix': 'ptAny',
-    'body': "PropTypes.any.isRequired,"
-
-  # PropType bool
-  'PropType bool [React Snippet]':
-    'prefix': 'ptb',
-    'body': "PropTypes.bool,"
-  'PropType bool (required) [React Snippet]':
-    'prefix': 'ptB',
-    'body': "PropTypes.bool.isRequired,"
-
-  # PropType function
-  'PropType function [React Snippet]':
-    'prefix': 'ptf',
-    'body': "PropTypes.func,"
-  'PropType function (required) [React Snippet]':
-    'prefix': 'ptF',
-    'body': "PropTypes.func.isRequired,"
-
-  # PropType shape
-  'PropType shape [React Snippet]':
-    'prefix': 'ptsh',
+  'Lifecycle Method getSnapshotBeforeUpdate [React Snippet]':
+    'prefix': 'gsbu',
     'body': """
-    PropTypes.shape({
-        ${2}
-    }),
-    """
-  'PropType shape (required) [React Snippet]':
-    'prefix': 'ptSh',
-    'body': """
-    PropTypes.shape({
-        ${1}
-    }).isRequired,
-    """
-
-  # PropType oneOf
-  'PropType oneOf [React Snippet]':
-    'prefix': 'ptoo',
-    'body': """
-    PropTypes.oneOf([
-        ${1}
-    ]),
-    """
-  'PropType oneOf (required) [React Snippet]':
-    'prefix': 'ptOo',
-    'body': """
-    PropTypes.oneOf([
-        ${1}
-    ]).isRequired,
-    """
-
-  # PropType oneOfType
-  'PropType oneOfType [React Snippet]':
-    'prefix': 'ptoot',
-    'body': """
-    PropTypes.oneOfType([
-        ${1}
-    ]),
-    """
-  'PropType oneOfType (required) [React Snippet]':
-    'prefix': 'ptOot',
-    'body': """
-    PropTypes.oneOfType([
-        ${1}
-    ]).isRequired,
-    """
-
-  # PropType arrayOf
-  'PropType arrayOf [React Snippet]':
-    'prefix': 'ptao',
-    'body': """
-    PropTypes.arrayOf(${1}),
-    """
-  'PropType arrayOf (required) [React Snippet]':
-    'prefix': 'ptAo',
-    'body': """
-    PropTypes.arrayOf(${1}).isRequired,
+        getSnapshotBeforeUpdate() {
+            return ${1}
+        }
     """
     
-  # PropType instanceOf
-  'PropType instanceOf [React Snippet]':
-    'prefix': 'ptio',
+  'Add flow comment (lazy version)':
+    'prefix': 'fl',
     'body': """
-    PropTypes.instanceOf(${1}),
+        // @flow
     """
-  'PropType instanceOf (required) [React Snippet]':
-    'prefix': 'ptIo',
-    'body': """
-    PropTypes.instanceOf(${1}).isRequired,
-    """
-
-  # PropType element
-  'PropType element [React Snippet]':
-    'prefix': 'pte',
-    'body': "PropTypes.element,"
-  'PropType element (required) [React Snippet]':
-    'prefix': 'ptE',
-    'body': "PropTypes.element.isRequired,"
-
-  # PropType node
-  'PropType node [React Snippet]':
-    'prefix': 'ptnode',
-    'body': "PropTypes.node,"
-  'PropType node (required) [React Snippet]':
-    'prefix': 'ptNode',
-    'body': "PropTypes.node.isRequired,"
-
-
-
-  # PropType string
-  'React PropType string [React Snippet]':
-    'prefix': 'rpts',
-    'body': "React.PropTypes.string,"
-  'React PropType string (required) [React Snippet]':
-    'prefix': 'rptS',
-    'body': "React.PropTypes.string.isRequired,"
-
-  # PropType number
-  'React PropType number [React Snippet]':
-    'prefix': 'rptn',
-    'body': "React.PropTypes.number,"
-  'React PropType number (required) [React Snippet]':
-    'prefix': 'rptN',
-    'body': "React.PropTypes.number.isRequired,"
-
-  # PropType object
-  'React PropType object [React Snippet]':
-    'prefix': 'rpto',
-    'body': "React.PropTypes.object,"
-  'React PropType object (required) [React Snippet]':
-    'prefix': 'rptO',
-    'body': "React.PropTypes.object.isRequired,"
-
-  # PropType array
-  'React PropType array [React Snippet]':
-    'prefix': 'rpta',
-    'body': "React.PropTypes.array,"
-  'React PropType array (required) [React Snippet]':
-    'prefix': 'rptA',
-    'body': "React.PropTypes.array.isRequired,"
-
-  # PropType any
-  'React PropType any [React Snippet]':
-    'prefix': 'rptany',
-    'body': "React.PropTypes.any,"
-  'React PropType any (required) [React Snippet]':
-    'prefix': 'rptAny',
-    'body': "React.PropTypes.any.isRequired,"
-
-  # PropType bool
-  'React PropType bool [React Snippet]':
-    'prefix': 'rptb',
-    'body': "React.PropTypes.bool,"
-  'React PropType bool (required) [React Snippet]':
-    'prefix': 'rptB',
-    'body': "React.PropTypes.bool.isRequired,"
-
-  # PropType function
-  'React PropType function [React Snippet]':
-    'prefix': 'rptf',
-    'body': "React.PropTypes.func,"
-  'React PropType function (required) [React Snippet]':
-    'prefix': 'rptF',
-    'body': "React.PropTypes.func.isRequired,"
-
-  # PropType shape
-  'React PropType shape [React Snippet]':
-    'prefix': 'rptsh',
-    'body': """
-    React.PropTypes.shape({
-        ${2}
-    }),
-    """
-  'React PropType shape (required) [React Snippet]':
-    'prefix': 'rptSh',
-    'body': """
-    React.PropTypes.shape({
-        ${1}
-    }).isRequired,
-    """
-
-  # PropType oneOf
-  'React PropType oneOf [React Snippet]':
-    'prefix': 'rptoo',
-    'body': """
-    React.PropTypes.oneOf([
-        ${1}
-    ]),
-    """
-  'React PropType oneOf (required) [React Snippet]':
-    'prefix': 'rptOo',
-    'body': """
-    React.PropTypes.oneOf([
-        ${1}
-    ]).isRequired,
-    """
-
-  # PropType oneOfType
-  'React PropType oneOfType [React Snippet]':
-    'prefix': 'rptoot',
-    'body': """
-    React.PropTypes.oneOfType([
-        ${1}
-    ]),
-    """
-  'React PropType oneOfType (required) [React Snippet]':
-    'prefix': 'rptOot',
-    'body': """
-    React.PropTypes.oneOfType([
-        ${1}
-    ]).isRequired,
-    """
-
-  # PropType arrayOf
-  'React PropType arrayOf [React Snippet]':
-    'prefix': 'rptao',
-    'body': """
-      React.PropTypes.arrayOf(${1}),
-    """
-  'React PropType arrayOf (required) [React Snippet]':
-    'prefix': 'rptAo',
-    'body': """
-    React.PropTypes.arrayOf(${1}).isRequired,
-    """
-
-  # PropType arrayOf
-  'React PropType arrayOf [React Snippet]':
-    'prefix': 'rptao',
-    'body': """
-    React.PropTypes.arrayOf(${1}),
-    """
-  'React PropType arrayOf (required) [React Snippet]':
-    'prefix': 'rptAo',
-    'body': """
-    React.PropTypes.arrayOf(${1}).isRequired,
-    """
-
-  # PropType instanceOf
-  'React PropType instanceOf [React Snippet]':
-    'prefix': 'rptio',
-    'body': """
-      React.PropTypes.instanceOf(${1}),
-    """
-  'React PropType instanceOf (required) [React Snippet]':
-    'prefix': 'rptIo',
-    'body': """
-    React.PropTypes.instanceOf(${1}).isRequired,
-    """
-
-  # PropType element
-  'React PropType element [React Snippet]':
-    'prefix': 'rpte',
-    'body': "React.PropTypes.element,"
-  'React PropType element (required) [React Snippet]':
-    'prefix': 'rptE',
-    'body': "React.PropTypes.element.isRequired,"
-
-  # PropType node
-  'React PropType node [React Snippet]':
-    'prefix': 'rptnode',
-    'body': "React.PropTypes.node,"
-  'React PropType node (required) [React Snippet]':
-    'prefix': 'rptNode',
-    'body': "React.PropTypes.node.isRequired,"
+    

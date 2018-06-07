@@ -8,7 +8,10 @@
     "ES2015",
     "ES2016",
     "ES2017",
+    "ES2018",
     "Babel",
+    "Flow",
+    "Redux",
     "Snippets"
   ],
   "repository": "https://github.com/manuelbieh/atom-react-es2015-snippets",
